@@ -42,7 +42,7 @@ const handlesearch=(e)=>{
   console.log(e.target.value)
   const arr = flagsdata.filter((item)=>{
     console.log(item.name.common);
-    return item.name.common.includes(e.target.value)
+    return item.name.common.toLowerCase().includes(e.target.value.toLowerCase())
   })
 console.log(arr);
 setSearchData(arr);
@@ -57,7 +57,7 @@ setSearchData(arr);
             <div className="countryCard">
               <img  src={item.flags.png}
               alt={item.flags.alt} className="flagimg"/>
-              <h5>{item.name.common}</h5>
+              <p>{item.name.common}</p>
           </div>
           )
           
